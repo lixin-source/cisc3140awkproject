@@ -1,15 +1,14 @@
 #! /usr/bin/awk -f
 
+#tree_diameter.awk
+
 BEGIN { FS=","
     OFS=","
 }
-
+#skip header line
 NR==1{next;}
 
+#print the diameter, tree name and zipcode fields
+#do not print lines that have no tree name included
 $10!="" {print $4, $10, $26} 
-
-#./first2.awk 2015streetdata.csv | sort -rn > diameter_sorted._pipe.csv
-# ./second.awk diameter_sorted.csv | sort | uniq -c | sort -rn | head -1   
-# ./third.awk diameter_sorted.csv | uniq -c | sort -rn > zipcodes.csv
-# ./four.awk zipcodes.csv   
 

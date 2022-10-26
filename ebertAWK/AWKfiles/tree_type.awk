@@ -1,16 +1,14 @@
 #! /usr/bin/awk -f
 
+#tree_type.awk
+
 BEGIN { 
     FS=","
 }
-	
+# print the top 1% of trees from sample. In this case this value
+# was ~650000
+
 {print $2} NR==650000{exit}
-
-	   #print the first tree here
-
-# somehow find the most occurring value at $10
-
-#./first.awk 2015streetdata.csv | sort -rn | awk -F, '{print $2}' | sort | uniq -c | awk -F, '{print $1}'
 
 
 
